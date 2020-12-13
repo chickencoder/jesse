@@ -1,0 +1,19 @@
+@tailwind base;
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+html {
+  font-size: 18px;
+}
+
+body {
+  @apply bg-white dark:bg-gray-800 dark:text-white;
+}
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
