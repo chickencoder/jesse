@@ -8,6 +8,7 @@ const GET_POSTS = gql`
       title
       slug
       _publishedAt
+      firstPublished
     }
   }
 `
@@ -16,8 +17,9 @@ const GET_POST = gql`
   query($slug: String!) {
     post(filter: { slug: { eq: $slug } }) {
       title
-      _publishedAt
       content
+      _publishedAt
+      firstPublished
     }
   }
 `
@@ -30,7 +32,10 @@ const client = new GraphQLClient(process.env.API_URL, {
 
 export async function getPosts() {
   const { allPosts } = await client.request(GET_POSTS)
-  return allPosts
+  return allPosts.map((post) => ({
+    ...post,
+    published: post.firstPublished || post._publishedAt,
+  }))
 }
 
 export async function getPost(slug) {
@@ -38,6 +43,7 @@ export async function getPost(slug) {
   const result = await remark().use(html).process(post.content)
   return {
     ...post,
+    published: post.firstPublished || post._publishedAt,
     content: result.toString(),
   }
 }

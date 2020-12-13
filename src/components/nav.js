@@ -28,7 +28,7 @@ export default function Nav() {
         <span>London, UK</span>
       </div>
       <a
-        href="https://twitter.com"
+        href="https://twitter.com/jessethesibley"
         className="inline-flex items-center space-x-1"
       >
         <span>

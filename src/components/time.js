@@ -1,8 +1,8 @@
 import { format } from '../lib/time'
 
-export default function ({ value, ...props }) {
+export default function Time({ value, ...props }) {
   return (
-    <time datetime={value} {...props}>
+    <time dateTime={value} {...props}>
       {format(value)}
     </time>
   )

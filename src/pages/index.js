@@ -6,7 +6,6 @@ import Bio from '../components/bio'
 import Footer from '../components/footer'
 import Time from '../components/time'
 import { getPosts } from '../lib/posts'
-import { format } from '../lib/time'
 
 export async function getStaticProps() {
   return {
@@ -36,14 +35,14 @@ export default function IndexPage({ posts = [] }) {
             <li key={index}>
               <h2>
                 <Link href={post.slug}>
-                  <a className="font-medium border-b border-transparent dark:hover:border-gray-300">
+                  <a className="transition duration-100 ease-in-out font-medium border-b border-transparent hover:border-gray-900 dark:hover:border-gray-300">
                     {post.title}
                   </a>
                 </Link>
               </h2>
               <Time
                 className="text-sm text-gray-500 dark:text-gray-400"
-                value={post._publishedAt}
+                value={post.published}
               />
             </li>
           ))}
