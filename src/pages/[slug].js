@@ -18,7 +18,7 @@ export async function getStaticPaths() {
   }
 }
 
-export default function Post({ post }) {
+export default function Post({ post = {} }) {
   return (
     <div className="max-w-xl mx-auto p-4 space-y-8">
       <Back />
