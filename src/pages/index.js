@@ -22,7 +22,7 @@ export default function IndexPage({ posts = [] }) {
       <header className="max-w-sm mx-auto mt-16 space-y-6 dark:text-white">
         <Avatar className="mx-auto" />
         <section className="space-y-2">
-          <h1 className="font-heading font-bold text-2xl tracking-tighter">
+          <h1 className="font-heading font-bold text-2xl tracking-tight">
             Hey, I'm Jesse
           </h1>
           <Nav />

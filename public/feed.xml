@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Jesse Sibley</title>
+        <link>https://jessesibley.com/</link>
+        <description>Building friendly software and talking about design for humans, digital wellbeing &amp; privacy.</description>
+        <lastBuildDate>Tue, 22 Dec 2020 15:45:07 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[What on Earth Is Static Regeneration?]]></title>
+            <link>https://jessesibley.com/what-on-earth-is-static-regeneration</link>
+            <guid>https://jessesibley.com/what-on-earth-is-static-regeneration</guid>
+        </item>
+        <item>
+            <title><![CDATA[JAMStack Isn't About Developer Experience]]></title>
+            <link>https://jessesibley.com/jamstack-isnt-about-developer-experience</link>
+            <guid>https://jessesibley.com/jamstack-isnt-about-developer-experience</guid>
+        </item>
+    </channel>
+</rss>

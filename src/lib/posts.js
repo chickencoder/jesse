@@ -1,6 +1,7 @@
 import remark from 'remark'
 import html from 'remark-html'
-import { gql, GraphQLClient } from 'graphql-request'
+import { gql } from 'graphql-request'
+import { client } from './client'
 
 const GET_POSTS = gql`
   {
@@ -23,12 +24,6 @@ const GET_POST = gql`
     }
   }
 `
-
-const client = new GraphQLClient(process.env.API_URL, {
-  headers: {
-    authorization: `Bearer ${process.env.API_KEY}`,
-  },
-})
 
 export async function getPosts() {
   const { allPosts } = await client.request(GET_POSTS)
