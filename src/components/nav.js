@@ -48,7 +48,7 @@ export default function Nav() {
             />
           </svg>
         </span>
-        <span className="transition duration-100 ease-in-out text-blue-500 border-b border-blue-300 dark:border-blue-800 dark:hover:text-gray-900 hover:bg-yellow-100">
+        <span className="transition duration-100 ease-in-out text-blue-500 border-b border-blue-200 hover:border-blue-500">
           @jessethesibley
         </span>
       </a>

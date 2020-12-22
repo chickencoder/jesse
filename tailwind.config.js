@@ -12,6 +12,16 @@ module.exports = {
         heading: ['Poppins', defaultTheme.fontFamily.sans],
       },
       colors: {},
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h1, h2, h3, h4': {
+              fontFamily: ['Poppins'],
+              letterSpacing: theme('tracking.tight'),
+            },
+          },
+        },
+      }),
     },
     container: {
       center: true,
