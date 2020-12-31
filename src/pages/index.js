@@ -3,22 +3,33 @@ import Link from 'next/link'
 import Avatar from '../components/avatar'
 import Nav from '../components/nav'
 import Bio from '../components/bio'
+import Seo from '../components/seo'
 import Footer from '../components/footer'
 import Time from '../components/time'
 import { getPosts } from '../lib/posts'
+import { getSite } from '../lib/site'
 
 export async function getStaticProps() {
   return {
-    props: { posts: await getPosts() },
+    props: { posts: await getPosts(), site: await getSite() },
   }
 }
 
-export default function IndexPage({ posts = [] }) {
+export default function IndexPage({ posts = [], site }) {
+  const {
+    _site: { globalSeo, favicon },
+  } = site
   return (
     <>
       <Head>
         <title>Jesse Sibley</title>
       </Head>
+      <Seo
+        favicon={favicon.url}
+        title={globalSeo.fallbackSeo.title}
+        description={globalSeo.fallbackSeo.description}
+        twitter={globalSeo.twitterAccount}
+      />
       <header className="max-w-md mx-auto mt-16 mb-8 space-y-6 dark:text-white">
         <Avatar className="mx-auto" />
         <section className="space-y-2">
