@@ -17,19 +17,21 @@ export async function getStaticPaths() {
     paths: posts.map((post) => ({
       params: { slug: post.slug },
     })),
-    fallback: true,
+    fallback: false,
   }
 }
 
-export default function Post({ post = {}, site }) {
+export default function Post({ post = {}, site = {} }) {
   const {
     _site: { globalSeo, favicon },
   } = site
+
   const snippet =
     post.content
       .slice(0, 140)
       .replace(/(<([^>]+)>)/gi, '')
       .trim() + '...'
+
   return (
     <>
       <Seo
