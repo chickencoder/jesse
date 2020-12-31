@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Avatar({ variant = 'normal', className = '' }) {
   const variants = {
     small: { width: 38, height: 38 },
-    normal: { width: 96, height: 96 },
+    normal: { width: 120, height: 120 },
   }
   const sizes = variants[variant]
   return (

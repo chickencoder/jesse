@@ -31,7 +31,7 @@ export default function Post({ post = {} }) {
           <Time value={post.published} className="text-gray-500" />
         </header>
         <section
-          className="prose prose-blue"
+          className="prose prose-blue dark:prose-dark"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
       </article>

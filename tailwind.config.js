@@ -21,6 +21,17 @@ module.exports = {
             },
           },
         },
+        dark: {
+          css: {
+            color: theme('colors.gray.200'),
+            'h1, h2, h3, h4': {
+              color: theme('colors.white'),
+            },
+            'strong, code': {
+              color: theme('colors.white'),
+            },
+          },
+        },
       }),
     },
     container: {
@@ -29,7 +40,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      typography: ['dark'],
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 }

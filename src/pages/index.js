@@ -19,7 +19,7 @@ export default function IndexPage({ posts = [] }) {
       <Head>
         <title>Jesse Sibley</title>
       </Head>
-      <header className="max-w-sm mx-auto mt-16 space-y-6 dark:text-white">
+      <header className="max-w-md mx-auto mt-16 space-y-6 dark:text-white">
         <Avatar className="mx-auto" />
         <section className="space-y-2">
           <h1 className="font-heading font-bold text-2xl tracking-tight">
@@ -29,7 +29,7 @@ export default function IndexPage({ posts = [] }) {
         </section>
         <Bio />
       </header>
-      <main className="max-w-sm mx-auto mb-16">
+      <main className="max-w-md mx-auto mb-16">
         <ul className="space-y-8">
           {posts.map((post, index) => (
             <li key={index}>
