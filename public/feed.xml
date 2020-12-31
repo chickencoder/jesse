@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Jesse Sibley</title>
         <link>https://jessesibley.com/</link>
         <description>Building friendly software and talking about design for humans, digital wellbeing &amp; privacy.</description>
-        <lastBuildDate>Tue, 22 Dec 2020 15:45:07 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 31 Dec 2020 12:26:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -12,11 +12,77 @@
             <title><![CDATA[What on Earth Is Static Regeneration?]]></title>
             <link>https://jessesibley.com/what-on-earth-is-static-regeneration</link>
             <guid>https://jessesibley.com/what-on-earth-is-static-regeneration</guid>
+            <content:encoded><![CDATA[<p><a href="https://vercel.com">Vercel</a> announced <a href="https://nextjs.org/blog/next-9-5">Next.js 9.5</a> today which gave us <strong>'Stable Incremental Static Regeneration'</strong>. But, <em>what on earth is that?</em></p>
+<p>If you're not familiar, <strong>Static Generation</strong> is the process of dynamically generating pages at build time. For example, an e-commerce website might generate a static HTML page for each product in their catalog as oppose to the traditional approach of using a server to load in product information from a database.</p>
+<p>This is nice because static HTML files are fast to serve. Additionally, static HTML can be easily served from a global CDN, resulting is quick page loads wherever you are in the world.</p>
+<p>This technique also causes less load for databases and servers, making it a much cheaper option.</p>
+<p>The major drawback of traditional static generation however, is that if a small change is made to a single page, the entire site must be rebuilt and redeployed. For a site with thousands of articles or products, this could take a long time.</p>
+<h2>Incremental Static Generation</h2>
+<p>To address this issue, the Next.js contributors have been working on giving static pages the ability to be "revalidated" at runtime.</p>
+<p>In practise, this works with the <code>revalidate</code> option in the <code>getStaticProps()</code> method of a Next.js page. The <code>revalidate</code> option, if specified, will instruct the page to be regenerated at a given interval.</p>
+<p>When a user visits an "out of date" page, they will be served up a "stale" version. Traffic on the site will then cause the page to be re-rendered in the background meaning that the next users to visit the page will see the latest, "up to date" version.</p>
+<h2>It gets better...</h2>
+<p>Instead of having to define all pages at build time and then incrementally rebuilding them at runtime, you can now <a href="https://nextjs.org/blog/next-9-5#stable-incremental-static-regeneration">register new static pages at <em>runtime</em></a>.</p>
+<p>This is like automatic server-side rendering but once rendered, pages are served statically and can then also be updated on demand.</p>
+<p>Here's a <a href="https://static-tweet.now.sh/">demo with an explanation</a> if you don't believe me...</p>
+<p>2020 <em>really is</em> a crazy year.</p>
+<h2>Big Wins</h2>
+<p>In my opinion, this approach to static generation is a defining moment for <a href="https://jamstack.org">JAMStack</a> which could make it far more adoptable than before.</p>
+<p>You just can't beat the speed of pure HTML.</p>
+<p>If you can build complex dynamic sites with the simplicity of a tool like <a href="https://nextjs.org">Next.js</a> why use anything else?</p>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[JAMStack Isn't About Developer Experience]]></title>
             <link>https://jessesibley.com/jamstack-isnt-about-developer-experience</link>
             <guid>https://jessesibley.com/jamstack-isnt-about-developer-experience</guid>
+            <content:encoded><![CDATA[<p>You may have heard the term <strong>JAMStack</strong> being thrown around a lot recently in web development circles.</p>
+<p><a href="https://jamstack.org">JAMStack</a> (JAM standing for Javascript, APIs &#x26; Markup) is a set of principles for developing web applications.</p>
+<p>In my opinion, the defining features of <strong>JAMStack</strong> can be summarised as follows...</p>
+<ol>
+<li>Statically render your markup</li>
+<li>Use client-side fetching to make your site dynamic</li>
+<li>Decouple your backend from your frontend</li>
+</ol>
+<p>These ideas have been championed by <em>cool</em> developer-tooling companies such as <a href="https://netlify.com">Netlify</a> (whose founders coined the term), <a href="https://vercel.com">Vercel</a> and a whole bunch of other companies building tools that empower the stack. For example, companies providing CMS products like <a href="https://sanity.io">Sanity</a> or image hosting like <a href="https://cloudinary.com">Cloudinary</a>.</p>
+<h3>JAMStack isn't that new</h3>
+<p>Chances are, if your blog is a bunch of static files, then you're already using <strong>JAMStack</strong>. Congratulations. Welcome to the club!</p>
+<h3>JAMStack is being <em>sold</em> to developers</h3>
+<p>The main way this new approach is being pushed forward is by capturing the attention of developers. Of course, these ideas wouldn't mean much to non-developers anyway.</p>
+<p>This has led to what I would say is the <strong>biggest misconception about JAMStack</strong>, and that is... "JAMStack is about Developer Experience".</p>
+<h3>JAMStack Is Not About Developer Experience</h3>
+<p>Don't get me wrong. The developer tooling associated with the <strong>JAMStack</strong> revolution is well built and exciting.</p>
+<p>Separating a messy backend from the frontend can be incredibly empowering for frontend developers. Having full decision-making control over the frontend without being constrained by choices made on the backend can be hugely impactful. Often this leads to more considered and accessible web experiences with an additional performance boost too.</p>
+<p>But <strong>JAMStack</strong> is more than just the look on a developer's face after a really good coding session.</p>
+<p>One of the down sides to <strong>JAMStack</strong> is that there can be so many decisions to make. What framework? Which tools? Which service?</p>
+<p>There are lots of other approaches to web development that have a simpler onboarding process that also don't require you to make so many decisions. For many developers, this alone is a good enough reason to stick to their well-understood, battle-tested tools.</p>
+<p><strong>Developer experience</strong> is subjective.</p>
+<h3>Pushing it to the edge</h3>
+<p>I would argue that <strong>JAMStack</strong> is actually more of a push towards developing web applications that can take full advantage of improvements in cloud technology.</p>
+<p><strong>JAMStack</strong> apps were born to be served on <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDNs</a>.</p>
+<p><strong>CDNs</strong> are cloud networks that can serve your content from "edge nodes" in regions all around the world. The advantages of using a <strong>CDN</strong>, as opposed to having a server <em>somewhere</em> in the world, which will probably fall over at some point, is that your application can be <strong>highly available</strong>, <strong>scalable</strong> &#x26; <strong>fast</strong> to serve.</p>
+<ul>
+<li>
+<p><strong>Highly available</strong> because if one region goes down, users will just be served up content from the next closest region.</p>
+</li>
+<li>
+<p><strong>Scalable</strong> because web traffic is automatically load balanced.</p>
+</li>
+<li>
+<p><strong>Fast</strong> because <strong>CDNs</strong> are optimised for fast content delivery, wherever you are in the world.</p>
+</li>
+</ul>
+<h3>This is how the world works now</h3>
+<p>The development of this kind of technology is based on the fact that this is how the world works now. The nature of the internet is that your users can be anywhere. Therefore, it is important to make sure that irrespective of where your users are, they will always receive the best service.</p>
+<h3>JAMStack doesn't always make sense</h3>
+<p>On the other hand, deploying your site globally doesn't always make sense.</p>
+<p>Whether you're building internal tools for your company or you just prefer the tried and tested path, you can always make a good argument for not choosing the <strong>JAMStack</strong> way.</p>
+<p>I should also mention that using a <strong>CDN</strong> isn't a unique thing to the <strong>JAMStack</strong>. It feels most natural to use a <strong>CDN</strong> when serving static files but you can serve cached contents from a server-rendered application in the same way. There are added complications, such as cache-invalidation, but many applications run quite happily behind a reverse-proxy cache served through a <strong>CDN</strong> in regions all over the world.</p>
+<p>The difference is, with <strong>JAMStack</strong>, this is delightfully easy.</p>
+<h2>Summary</h2>
+<p>For most developers, the wisest path to tread in 2020 is to build web applications the <strong>JAMStack</strong> way.</p>
+<p>The overall advantage that <strong>JAMStack</strong> gives developers from the start is the opportunity to focus less on deployment and general performance and more about crafting an excellent user experience.</p>
+]]></content:encoded>
         </item>
     </channel>
 </rss>

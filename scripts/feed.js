@@ -7,7 +7,6 @@ const URL = 'https://jessesibley.com/'
 
 async function generate() {
   const { _site: site } = await getSite()
-  console.log(site)
   const feed = new Feed({
     title: site.globalSeo.siteName,
     description: site.globalSeo.fallbackSeo.description,
@@ -28,6 +27,7 @@ async function generate() {
       title: post.title,
       id: postUrl,
       link: postUrl,
+      content: post.content,
     })
   })
 

@@ -23,7 +23,7 @@ export default function Post({ post = {} }) {
   return (
     <div className="max-w-xl mx-auto p-4 space-y-8">
       <Back />
-      <article className="space-y-8 mb-16">
+      <article className="space-y-8">
         <header className="space-y-4">
           <h1 className="font-heading font-bold text-3xl tracking-tight mb-3">
             {post.title}

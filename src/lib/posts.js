@@ -8,6 +8,7 @@ const GET_POSTS = gql`
     allPosts {
       title
       slug
+      content
       _publishedAt
       firstPublished
     }
@@ -27,10 +28,15 @@ const GET_POST = gql`
 
 export async function getPosts() {
   const { allPosts } = await client.request(GET_POSTS)
-  return allPosts.map((post) => ({
-    ...post,
-    published: post.firstPublished || post._publishedAt,
-  }))
+  const posts = allPosts.map(async (post) => {
+    const result = await remark().use(html).process(post.content)
+    return {
+      ...post,
+      published: post.firstPublished || post._publishedAt,
+      content: result.toString(),
+    }
+  })
+  return await Promise.all(posts)
 }
 
 export async function getPost(slug) {
