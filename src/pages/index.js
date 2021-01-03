@@ -30,7 +30,7 @@ export default function IndexPage({ posts = [], site }) {
         description={globalSeo.fallbackSeo.description}
         twitter={globalSeo.twitterAccount}
       />
-      <header className="max-w-md mx-auto mt-16 mb-8 space-y-6 dark:text-white">
+      <header className="max-w-md mx-auto px-4 mt-16 mb-8 space-y-6 dark:text-white">
         <Avatar className="mx-auto" />
         <section className="space-y-2">
           <h1 className="font-heading font-bold text-2xl tracking-tight">
@@ -40,7 +40,7 @@ export default function IndexPage({ posts = [], site }) {
         </section>
         <Bio />
       </header>
-      <main className="max-w-md mx-auto">
+      <main className="max-w-md px-4 mx-auto">
         <ul className="space-y-8">
           {posts.map((post, index) => (
             <li key={index}>
